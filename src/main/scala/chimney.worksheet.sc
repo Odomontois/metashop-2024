@@ -29,6 +29,8 @@ val client = Client("Oleg", List("workshop"), ZonedDateTime.now())
 val clientData = Tuple.fromProductTyped(client)
 clientMirror.fromProductTyped(clientData) == client
 
+
+
 type SelectField[Name <: String, NamesFrom <: Tuple, Fields <: Tuple] =
   NamesFrom match {
     case hname *: restNames =>
