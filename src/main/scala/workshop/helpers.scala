@@ -1,9 +1,9 @@
 package workshops
 
-import scala.quoted.Quotes
-import scala.quoted.Expr
+import scala.quoted.{Expr, Type, Quotes, Varargs}
 
 inline def showCode(inline code: Any): String = ${ showCodeImpl('code) }
 
-def showCodeImpl(x: Expr[Any])(using Quotes): Expr[String] =
-  Expr(x.show)
+private def showCodeImpl(x: Expr[Any])(using Quotes): Expr[String] = Expr(
+  x.show
+)

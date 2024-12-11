@@ -130,12 +130,9 @@ inline def selectAllFields[
     case _: (hname *: restNames) =>
       inline erasedValue[FieldsTo] match {
         case _: (hfield *: restFields) =>
-          val construct = summonInline[((hfield *: restFields)) <:< FieldsTo]
-          type Fld =
-            SelectField[hname, NamesFrom, FieldsFrom]
-          val f1: Fld = selectField[hname, NamesFrom, FieldsFrom](
-            fields
-          )
+          val construct = summonInline[(hfield *: restFields) <:< FieldsTo]
+          type Fld = SelectField[hname, NamesFrom, FieldsFrom]
+          val f1: Fld = selectField[hname, NamesFrom, FieldsFrom](fields)
           val hfield: hfield = summonInline[Fld <:< hfield](f1)
           val rest =
             selectAllFields[restNames, restFields, NamesFrom, FieldsFrom](
