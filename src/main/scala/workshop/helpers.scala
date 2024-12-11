@@ -5,4 +5,5 @@ import scala.quoted.Expr
 
 inline def showCode(inline code: Any): String = ${ showCodeImpl('code) }
 
-def showCodeImpl(x: Expr[Any])(using Quotes): Expr[String] = Expr(x.show)
+def showCodeImpl(x: Expr[Any])(using Quotes): Expr[String] =
+  Expr(x.show)
