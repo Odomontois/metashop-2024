@@ -3,7 +3,7 @@ import java.util.UUID
 import scala.deriving.Mirror
 import scala.compiletime.ops.any.==
 import scala.compiletime.{erasedValue, constValue, summonInline}
-import workshops.showCode
+import workshop.showCode
 
 case class Client(
     name: String,
@@ -113,6 +113,7 @@ inline def selectField[
     fields: Fields
 ): SelectField[name, NamesFrom, Fields] =
   fields.apply(constValue[IndexOf[name, NamesFrom]])
+
 
 selectField["name", ClientNames, ClientFields](clientData)
 selectField["tags", ClientNames, ClientFields](clientData)

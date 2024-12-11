@@ -1,13 +1,12 @@
-import workshops.showCode
+import workshop.showCode
 
 import scala.compiletime.{error, codeOf}
 import workshop.{foo, bar, convert}
-showCode(foo)
 
-// bar
+foo
 
-inline def quux(x: Int) = 
-    error("error anyway, but x was " + codeOf(x))
+
+
 
 // quux(2)
 
