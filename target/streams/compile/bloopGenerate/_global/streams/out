@@ -1,0 +1,4 @@
+[debug] [workshop] Classpath dependencies List()
+[debug] [workshop] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'workshop' to '/Users/odomontois/workshop/.bloop/workshop.json'
+[success] Generated .bloop/workshop.json
